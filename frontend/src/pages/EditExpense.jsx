@@ -16,7 +16,7 @@ function EditExpense() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/expenses", {
+      .get(`${import.meta.env.VITE_API_URL}/expenses`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -36,7 +36,7 @@ function EditExpense() {
     setError("");
     try {
       await axios.put(
-        `http://localhost:5000/expenses/${id}`,
+        `${import.meta.env.VITE_API_URL}/expenses/${id}`,
         { ...form, amount: Number(form.amount) },
         {
           headers: {

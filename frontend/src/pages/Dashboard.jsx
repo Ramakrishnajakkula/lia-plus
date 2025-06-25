@@ -29,11 +29,14 @@ function Dashboard() {
 
   const fetchExpenses = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/expenses", {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/expenses`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       setExpenses(res.data);
     } catch (err) {
       setError("Failed to fetch data");

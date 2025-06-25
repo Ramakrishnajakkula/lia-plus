@@ -21,7 +21,7 @@ function AddExpense() {
     setError("");
     try {
       await axios.post(
-        "http://localhost:5000/expenses",
+        `${import.meta.env.VITE_API_URL}/expenses`,
         { ...form, amount: Number(form.amount) },
         {
           headers: {

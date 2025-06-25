@@ -9,11 +9,14 @@ function Expenses() {
 
   const fetchExpenses = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/expenses", {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/expenses`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       setExpenses(res.data);
     } catch (err) {
       setError("Failed to fetch expenses");
@@ -27,11 +30,14 @@ function Expenses() {
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this expense?")) return;
     try {
-      await axios.delete(`http://localhost:5000/expenses/${id}`, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      await axios.delete(
+        `${import.meta.env.VITE_API_URL}/expenses/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       setExpenses(expenses.filter((e) => e._id !== id));
     } catch {
       setError("Delete failed");
