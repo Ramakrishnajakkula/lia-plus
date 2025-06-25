@@ -40,9 +40,7 @@ function AddExpense() {
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-md bg-white shadow-xl rounded-2xl px-8 py-10 space-y-6">
-        <h2
-          className="text-3xl font-bold mb-2 text-center"
-          style={{ color: "#a436f0" }}>
+        <h2 className="text-3xl font-bold mb-2 text-center text-blue-700">
           Add Income / Expense
         </h2>
         {error && (
@@ -81,8 +79,7 @@ function AddExpense() {
             value={form.amount}
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring"
-            style={{ borderColor: "#a436f0" }}
+            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
           />
         </div>
         <div>
@@ -93,8 +90,7 @@ function AddExpense() {
             value={form.category}
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring"
-            style={{ borderColor: "#a436f0" }}
+            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
           />
         </div>
         <div>
@@ -105,8 +101,7 @@ function AddExpense() {
             value={form.description}
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring"
-            style={{ borderColor: "#a436f0" }}
+            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
           />
         </div>
         <div>
@@ -118,14 +113,12 @@ function AddExpense() {
             value={form.date}
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring"
-            style={{ borderColor: "#a436f0" }}
+            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
           />
         </div>
         <button
           type="submit"
-          className="w-full py-3 rounded-lg font-semibold text-lg transition"
-          style={{ background: "#a436f0", color: "#fff" }}>
+          className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 font-semibold text-lg transition">
           Add
         </button>
       </form>

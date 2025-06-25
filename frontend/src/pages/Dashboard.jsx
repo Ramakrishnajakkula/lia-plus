@@ -155,86 +155,42 @@ function Dashboard() {
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-8">
         {/* Date Filter Controls */}
-        <div className=" rounded-lg shadow p-4 md:p-6 flex flex-wrap gap-2 md:gap-4 mb-6 items-center max-w-4xl mx-auto w-full mt-6">
-          <button
-            className={`px-4 py-1 rounded font-semibold ${
-              filter === "all" ? "" : "text-gray-500 hover:bg-gray-100"
-            }`}
-            style={
-              filter === "all" ? { background: "#a436f0", color: "#fff" } : {}
-            }
-            onClick={() => setFilter("all")}>
-            All
-          </button>
-          <button
-            className={`px-4 py-1 rounded font-semibold ${
-              filter === "weekly" ? "" : "text-gray-500 hover:bg-gray-100"
-            }`}
-            style={
-              filter === "weekly"
-                ? { background: "#a436f0", color: "#fff" }
-                : {}
-            }
-            onClick={() => setFilter("weekly")}>
-            Weekly
-          </button>
-          <button
-            className={`px-4 py-1 rounded font-semibold ${
-              filter === "monthly" ? "" : "text-gray-500 hover:bg-gray-100"
-            }`}
-            style={
-              filter === "monthly"
-                ? { background: "#a436f0", color: "#fff" }
-                : {}
-            }
-            onClick={() => setFilter("monthly")}>
-            Monthly
-          </button>
-          <button
-            className={`px-4 py-1 rounded font-semibold ${
-              filter === "yearly" ? "" : "text-gray-500 hover:bg-gray-100"
-            }`}
-            style={
-              filter === "yearly"
-                ? { background: "#a436f0", color: "#fff" }
-                : {}
-            }
-            onClick={() => setFilter("yearly")}>
-            Yearly
-          </button>
-          <button
-            className={`px-4 py-1 rounded font-semibold ${
-              filter === "custom" ? "" : "text-gray-500 hover:bg-gray-100"
-            }`}
-            style={
-              filter === "custom"
-                ? { background: "#a436f0", color: "#fff" }
-                : {}
-            }
-            onClick={() => setFilter("custom")}>
-            Custom
-          </button>
-          {filter === "custom" && (
-            <div className="flex items-center gap-2 ml-2">
-              <input
-                type="date"
-                value={dateRange.from}
-                onChange={(e) =>
-                  setDateRange({ ...dateRange, from: e.target.value })
-                }
-                className="border rounded-md px-3 py-1"
-              />
-              <span className="text-gray-500">to</span>
-              <input
-                type="date"
-                value={dateRange.to}
-                onChange={(e) =>
-                  setDateRange({ ...dateRange, to: e.target.value })
-                }
-                className="border rounded-md px-3 py-1"
-              />
-            </div>
-          )}
+        <div className="bg-white rounded-lg shadow p-4 mb-6">
+          <div className="flex flex-wrap gap-2 items-center">
+            {["all", "weekly", "monthly", "yearly", "custom"].map((f) => (
+              <button
+                key={f}
+                className={`px-4 py-2 rounded-md font-medium ${
+                  filter === f
+                    ? "bg-blue-600 text-white"
+                    : "text-gray-700 hover:bg-gray-100"
+                }`}
+                onClick={() => setFilter(f)}>
+                {f.charAt(0).toUpperCase() + f.slice(1)}
+              </button>
+            ))}
+            {filter === "custom" && (
+              <div className="flex items-center gap-2 ml-2">
+                <input
+                  type="date"
+                  value={dateRange.from}
+                  onChange={(e) =>
+                    setDateRange({ ...dateRange, from: e.target.value })
+                  }
+                  className="border rounded-md px-3 py-1"
+                />
+                <span className="text-gray-500">to</span>
+                <input
+                  type="date"
+                  value={dateRange.to}
+                  onChange={(e) =>
+                    setDateRange({ ...dateRange, to: e.target.value })
+                  }
+                  className="border rounded-md px-3 py-1"
+                />
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Financial Summary Cards */}

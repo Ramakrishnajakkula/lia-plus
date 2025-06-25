@@ -42,13 +42,10 @@ function Expenses() {
     <div className="flex flex-col items-center min-h-[70vh] bg-gradient-to-br ">
       <div className="w-full max-w-3xl bg-white shadow-xl rounded-2xl px-8 py-8">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-4">
-          <h2 className="text-3xl font-bold" style={{ color: "#a436f0" }}>
-            Your Expenses
-          </h2>
+          <h2 className="text-3xl font-bold text-blue-700">Your Expenses</h2>
           <Link
             to="/expenses/add"
-            className="inline-block px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition"
-            style={{ background: "#a436f0", color: "#fff" }}>
+            className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">
             + Add Expense
           </Link>
         </div>
@@ -56,7 +53,7 @@ function Expenses() {
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white rounded-lg">
             <thead>
-              <tr style={{ background: "#f3e8fd", color: "#a436f0" }}>
+              <tr className="bg-blue-50 text-blue-700">
                 <th className="py-2 px-4 text-left">Type</th>
                 <th className="py-2 px-4 text-left">Amount</th>
                 <th className="py-2 px-4 text-left">Category</th>
@@ -100,14 +97,12 @@ function Expenses() {
                   <td className="py-2 px-4 flex gap-2 justify-center">
                     <Link
                       to={`/expenses/edit/${exp._id}`}
-                      className="px-3 py-1 rounded font-semibold"
-                      style={{ background: "#f59e42", color: "#fff" }}>
+                      className="bg-yellow-400 text-white px-3 py-1 rounded hover:bg-yellow-500 transition">
                       Edit
                     </Link>
                     <button
                       onClick={() => handleDelete(exp._id)}
-                      className="px-3 py-1 rounded font-semibold"
-                      style={{ background: "#ef4444", color: "#fff" }}>
+                      className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition">
                       Delete
                     </button>
                   </td>

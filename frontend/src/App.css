@@ -94,40 +94,6 @@ body {
   border: 1px solid #2563eb;
 }
 
-/* Custom blue color for buttons and highlights */
-.bg-blue-600,
-.bg-blue-700,
-.text-blue-600,
-.text-blue-700,
-.hover\:bg-blue-700:hover,
-.hover\:text-blue-700:hover,
-.bg-blue-50,
-.text-blue-800,
-.hover\:text-blue-800:hover {
-  background-color: #a436f0 !important;
-  color: #a436f0 !important;
-  border-color: #a436f0 !important;
-}
-
-/* For Tailwind utility classes in JSX, override with !important */
-button.bg-blue-600,
-button.bg-blue-700,
-a.bg-blue-600,
-a.bg-blue-700,
-a.text-blue-600,
-a.text-blue-700,
-a.hover\:bg-blue-700:hover,
-a.hover\:text-blue-700:hover {
-  background-color: #a436f0 !important;
-  color: #fff !important;
-  border-color: #a436f0 !important;
-}
-
-/* For light backgrounds */
-.bg-blue-50 {
-  background-color: #f3e8fd !important;
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .expenses-table {
@@ -155,11 +121,6 @@ a.hover\:text-blue-700:hover {
 
 .max-w-2xl {
     max-width: 100%;
-}
-.py-8 {
-    
-    padding-top: 1rem;
-    padding-bottom: 2rem;
 }
 
 /* Hide scrollbar for dashboard and add expense page */
