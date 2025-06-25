@@ -29,8 +29,13 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
+// Welcome message for testing
+app.get("/", (req, res) => {
+    res.send("Welcome to the Expense Tracker API!");
+});
+
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on port ${PORT}`);
 });
 
