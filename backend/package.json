@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Node.js backend for Vercel",
+  "description": "Node.js backend for Expense Tracker",
   "main": "server.js",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -19,8 +19,8 @@
     "zod": "^3.22.4"
   },
   "scripts": {
-    "dev": "vercel dev",
-    "start": "vercel dev",
-    "deploy": "vercel --prod"
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   }
 }
+
