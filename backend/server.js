@@ -6,12 +6,24 @@ const path = require('path');
 
 const app = express();
 
+// CORS Configuration
+const corsOptions = {
+  origin: [
+    'https://lia-plus-vc2a.vercel.app', // Your production frontend
+    'http://localhost:3000',            // Local development
+    process.env.FRONTEND_URL             // Optional: from environment variable
+  ].filter(Boolean),                    // Remove any undefined values
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+};
+
 // Middlewares
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect(process.env.MONGODB_URI, { 
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
@@ -25,14 +37,6 @@ app.use('/expenses', authMiddleware, expenseRoutes);
 
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
-
-// Serve frontend build in production
-// if (process.env.NODE_ENV === 'production') {
-//     app.use(express.static(path.join(__dirname, '../frontend/build')));
-//     app.get('*', (req, res) => {
-//         res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
-//     });
-// }
 
 // Root and test routes
 app.get("/", (req, res) => {
