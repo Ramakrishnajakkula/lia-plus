@@ -13,11 +13,11 @@ mongoose.connect(process.env.MONGODB_URI, {
     useUnifiedTopology: true
 });
 
-const expenseRoutes = require('./routes/expenses');
-const authMiddleware = require('./middlewares/authMiddleware');
+const expenseRoutes = require('./expenses');
+const authMiddleware = require('../middlewares/authMiddleware');
 app.use('/expenses', authMiddleware, expenseRoutes);
 
-const authRoutes = require('./routes/auth');
+const authRoutes = require('./auth');
 app.use('/auth', authRoutes);
 
 // Serve React build in production

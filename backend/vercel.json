@@ -1,21 +1,17 @@
 {
+  "installCommand": "npm install --legacy-peer-deps",
   "version": 2,
   "builds": [
     {
       "src": "server.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "src/**/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/server.js"
-    }
-  ],
-  "env": {
-    "MONGODB_URI": "your_mongodb_uri",
-    "JWT_SECRET": "your_jwt_secret",
-    "PORT": "5000"
-  }
+    { "src": "/(.*)", "dest": "/" }
+  ]
 }
-    
