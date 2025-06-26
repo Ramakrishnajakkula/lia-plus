@@ -9,10 +9,10 @@ const app = express();
 // CORS Configuration
 const corsOptions = {
   origin: [
+    'http://localhost:5173', // Your Vite dev server
     'https://lia-plus-vc2a.vercel.app', // Your production frontend
-    'http://localhost:3000',            // Local development
-    process.env.FRONTEND_URL             // Optional: from environment variable
-  ].filter(Boolean),                    // Remove any undefined values
+    // Add other domains as needed
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true

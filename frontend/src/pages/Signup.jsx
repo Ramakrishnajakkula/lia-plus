@@ -19,7 +19,7 @@ function Signup() {
     e.preventDefault();
     setError("");
     try {
-      await axios.post("http://localhost:5000/auth/signup", form);
+      await axios.post(`${import.meta.env.VITE_API_URL}/auth/signup`, form);
       navigate("/signin");
     } catch (err) {
       setError(err.response?.data?.message || "Signup failed");
