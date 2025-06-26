@@ -22,12 +22,12 @@ app.use('/auth', authRoutes);
 
 // Serve React build in production
 const path = require('path');
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../frontend/build')));
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
-    });
-}
+// if (process.env.NODE_ENV === 'production') {
+//     app.use(express.static(path.join(__dirname, '../frontend/build')));
+//     app.get('*', (req, res) => {
+//         res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
+//     });
+// }
 
 // Welcome message for testing
 app.get("/", (req, res) => {
