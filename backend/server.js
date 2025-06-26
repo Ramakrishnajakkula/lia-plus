@@ -26,9 +26,14 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
-// Welcome message for root path
+// Welcome route for root path to avoid 404 on /
 app.get("/", (req, res) => {
     res.send("Welcome to the Expense Tracker API!");
+});
+
+// Test route for deployment verification
+app.get("/testroute", (req, res) => {
+    res.json({ message: "Test route is working!" });
 });
 
 const PORT = process.env.PORT || 5000;

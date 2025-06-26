@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-     "src": "./server.js",
+     "src": "server.js",
      "use": "@vercel/node"
       }
     ],
@@ -13,10 +13,9 @@
       }
     ],
     "env": {
-    "MONGODB_URI": "mongodb+srv://ramakrishna:Anji%40178909@cluster0.ifqbcou.mongodb.net/SPC?retryWrites=true&w=majority",
-    "JWT_SECRET": "your_jwt_secret_key",
+    "MONGODB_URI": "mongodb+srv://ramakrishna:Anji%40178909@cluster0.ifqbcou.mongodb.net/lia?retryWrites=true&w=majority",
+    "JWT_SECRET": "your_jwt_secret",
     "PORT": "5000"
   }
      }
 
-     
