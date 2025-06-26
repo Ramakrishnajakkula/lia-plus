@@ -9,7 +9,8 @@ const app = express();
 // CORS Configuration
 const allowedOrigins = [
   'http://localhost:5173',        // Your Vite dev server
-  'https://lia-plus-vc2a.vercel.app' // Your production frontend
+  'https://lia-plus-vc2a.vercel.app' ,
+  'https://lia-plus-go.vercel.app/'// Your production frontend
 ];
 
 const corsOptions = {
