@@ -1,3 +1,11 @@
+# Live Demo
+
+Access the live application here: [https://lia-plus-go.vercel.app/](https://lia-plus-go.vercel.app/)
+
+Experience the deployed frontend (on Vercel) connected to the backend (on Render).
+
+---
+
 # Expense Tracker – Lia Plus SDE Assignment
 
 Welcome to the Expense Tracker!  
@@ -171,6 +179,50 @@ VITE_API_URL=https://your-backend-url.vercel.app
 - **All code is original and well-commented.**
 - **Tested for edge cases and real-world usage.**
 - **Ready for demo and further extension (multi-user, analytics, etc).**
+
+---
+
+# Project Setup & Installation
+
+## Live Deployment
+
+- **Frontend:** Deployed on [Vercel](https://vercel.com/)
+- **Backend:** Deployed on [Render](https://render.com/)
+
+## Getting Started (Local Development)
+
+1. **Clone the repository**
+
+   ```bash
+   git clone <repo-url>
+   cd <project-directory>
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Environment Variables**
+
+   - Update the `.env` file as needed.
+   - For local development, point the frontend to the Render backend API URL.
+
+4. **Run the frontend locally**
+   ```bash
+   npm start
+   ```
+
+## Usage
+
+- Access the live frontend at: [Vercel Deployment URL]
+- The frontend communicates with the backend hosted on Render.
+
+## Notes
+
+- No need to run the backend locally unless you want to develop or debug backend features.
+- Update API endpoints in the frontend to use the Render backend URL for production.
 
 ---
 
